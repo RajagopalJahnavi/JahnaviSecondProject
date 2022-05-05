@@ -7,6 +7,28 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="popup">
+            <div class="contentBox">
+                <div class="imBx">
+                    <img src="Images\primeday.jpg" alt="primeday">
+                </div>
+                <div class="close"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+        </div>
+        <!--Auto popup-->
+        <script>
+            const popup=document.querySelector('.popup');
+            const close=document.querySelector('.close');
+            window.onload=function(){
+                setTimeout(function(){
+                    popup.style.display="block";
+                },900)
+            }
+
+            close.addEventListener('click',()=>{
+                popup.style.display="none";
+            })
+        </script>
         <header>
             <div class="first">
                 <div class="flex logo">
@@ -69,9 +91,19 @@
                     </ul>
                 </div>
                 <div class="second-3">
+                    <label id="dark-change"></label>
                     <span>Shop Mother's Day Gifts</span>
                 </div>
             </div>
+            <!--Dark Mode-->
+            <script>
+                const content=document.getElementsByTagName('body');
+                const darkMode=document.getElementById('dark-change');
+                darkMode.addEventListener('click',function(){
+                    darkMode.classList.toggle('active');
+                    content.classList.toggle('night');
+                })
+            </script>
         </header>
         <section class="sec-1">
             <div class="container">
@@ -385,7 +417,6 @@
                     <li><img src="Images\bk22.jpg" alt=""></li>
                     <li><img src="Images\bk23.jpg" alt=""></li>
                     <li><img src="Images\bk24.jpg" alt=""></li>
-                    <li><img src="Images\bk25.jpg" alt=""></li>
                 </ul>
             </div>
         </section>
