@@ -11,7 +11,7 @@ body{
     box-sizing: border-box;
 }
 :root{
-    --clr-darkmode:white;
+    --clr-darkmode:#eaeded;
 }
 .night{
     --clr-darkmode:black;
