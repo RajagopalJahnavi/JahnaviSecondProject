@@ -49,6 +49,11 @@ body.night{
     right:245px;
     top:67px;
 }
+#out{
+    position:absolute;
+    top:82px;
+    right:290px;
+}
 .popup{
     position:fixed;
     top:50%;
