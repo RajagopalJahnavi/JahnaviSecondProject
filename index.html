@@ -91,6 +91,9 @@
                     </ul>
                 </div>
                 <div class="second-3">
+                    <p id="out"></p>
+                    <div id="icon"></div>
+                    <img onClick="geolocation()" class=geo src='https://openweathermap.org/img/w/01d.png'/>
                     <label id="dark-change"></label>
                     <span>Shop Mother's Day Gifts</span>
                 </div>
@@ -103,6 +106,39 @@
                     darkMode.classList.toggle('active');
                     content.classList.toggle('night');
                 })
+            </script>
+            <!--Geo+Weather-->
+            <script>
+                let x = document.getElementById('out');
+                function geolocation(){
+                    if(navigator.geolocation){
+                        navigator.geolocation.getCurrentPosition(showPosition)
+                    }else{
+                        x.innerText="Geo Not Supported"
+                    }
+                }
+    
+                function showPosition(data){
+                    console.log(data)
+                    // x.innerText=`Latitude is ${data.coords.latitude} & Longitude is ${data.coords.longitude}`
+                    let latitude = data.coords.latitude;
+                    let longitude = data.coords.longitude
+                    const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&mode=json&units=metric&cnt=1&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+    
+                    /// api Calling 
+                    fetch(url,{method:'GET'})
+                    // return promise
+                    .then((res) => res.json())
+                    // return data
+                    .then((data) => {
+                        let cityName = data.city.name
+                        let weather = data.list[0].temp.day
+                        x.innerText = `Weather of ${cityName} is ${weather} °C`
+                        // document.getElementById('icon').appendChild(
+                        //      <img src='https://openweathermap.org/img/w/'+data.list[0].weather.icon+'.png'/>
+                        // )
+                    })
+                }
             </script>
         </header>
         <section class="sec-1">

@@ -10,6 +10,12 @@ body{
     background-color:#eaeded;
     box-sizing: border-box;
 }
+:root{
+    --clr-darkmode:white;
+}
+.night{
+    --clr-darkmode:black;
+}
 /*dark-mode*/
 label{
     position:absolute;
@@ -36,7 +42,12 @@ label.active:before{
     left:24px;
 }
 body.night{
-    background:black;
+    background:var(--clr-darkmode);
+}
+.geo{
+    position:absolute;
+    right:245px;
+    top:67px;
 }
 .popup{
     position:fixed;
@@ -400,7 +411,7 @@ body.night{
     display: flex;
     flex-direction: column;
     align-items:center;
-    background: linear-gradient(to bottom,transparent,#eaeded 30%);
+    background:linear-gradient(to bottom,transparent, var(--clr-darkmode));
 }
 .container-1 .para{
     background-color:rgb(238,234,234);
