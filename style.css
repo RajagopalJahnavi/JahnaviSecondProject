@@ -91,6 +91,7 @@ body.night{
 }
 .flex span,i{
     color:white;
+    font-size: 13px;
 }
 .logo{
     flex:0.18;
