@@ -339,11 +339,9 @@ label:before{
 }
 label.active:before{
     left:24px;
-    background:#fff;
 }
 body.night{
     background-color:black;
-    color:white;
 }
 .slide img{
     width: 1360px;

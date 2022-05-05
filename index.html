@@ -97,8 +97,8 @@
             </div>
             <!--Dark Mode-->
             <script>
-                const content=document.getElementsByTagName('body');
-                const darkMode=document.getElementById('dark-change');
+                var content=document.getElementsByTagName('body')[0];
+                var darkMode=document.getElementById('dark-change');
                 darkMode.addEventListener('click',function(){
                     darkMode.classList.toggle('active');
                     content.classList.toggle('night');
@@ -478,6 +478,6 @@
                 <span>&copy; RJ</span>
             </div>
         </section>
-        <script src="apps.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
