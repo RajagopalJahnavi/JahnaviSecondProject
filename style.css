@@ -12,9 +12,29 @@ body{
 }
 :root{
     --clr-darkmode:#eaeded;
+    --clr-productComp:white;
+    --clr-box:black;
+    --clr-boxA:white;
+    --clr-boxSpan:black;
+    --clr-boxB:white;
+    --clr-best:black;
+    --clr-slide:white;
+    --clr-slideHeading:black;
+    --clr-button:rgb(255 255 255);
+    --clr-buttonI:rgb(54,54,54);
 }
 .night{
     --clr-darkmode:black;
+    --clr-productComp:#2c2b2bb0;
+    --clr-box:antiquewhite;
+    --clr-boxA:#1e1d1d;
+    --clr-boxSpan:antiquewhite;
+    --clr-boxB:#2c2b2bb0;
+    --clr-best:antiquewhite;
+    --clr-slide:#2c2b2bb0;
+    --clr-slideHeading:antiquewhite;
+    --clr-button:#2c2b2bb0;
+    --clr-buttonI:white;
 }
 /*dark-mode*/
 label{
@@ -40,6 +60,7 @@ label:before{
 }
 label.active:before{
     left:24px;
+    background: #1aff00;
 }
 body.night{
     background:var(--clr-darkmode);
@@ -438,28 +459,29 @@ body.night{
 .product-comp .box{
     width:315px;
     height: 400px;
-    background-color:white;
+    background-color:var(--clr-productComp);
 }
 .product-comp a{
     margin-left:18px;
+    color: #bd06bd;
 }
 .box h3{
     margin-top:20px;
     margin-left:20px;
     font-size:20px;
     margin-bottom: 10px;
-    color:rgb(43,42,42);
+    color:var(--clr-box);
 }
 .box-a{
     overflow: hidden;
-    background-color:white;
+    background-color:var(--clr-boxA);
 }
 .box div img{
-    width:167px;
-    height:120px;
-    cursor:pointer;
-    margin-left: -20px;
-    margin-right: 0;
+    width: 147px;
+    height: 131px;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 0px;
 }
 .box-a div{
     display:inline-block;
@@ -468,6 +490,7 @@ body.night{
     display:block;
     font-size: 13px;
     margin-left:20px;
+    color:var(--clr-boxSpan);
 }
 .box-b{
     display:flex;
@@ -476,7 +499,7 @@ body.night{
     justify-content:space-between;
 }
 .box-b .best{
-    background-color: white;
+    background-color: var(--clr-boxB);
     height:130px;
     width:315px;
 }
@@ -484,6 +507,7 @@ body.night{
     font-size: 20px;
     margin:20px;
     margin-bottom: 15px;
+    color:var(--clr-best);
 }
 .best button{
     border-radius: 7px;
@@ -511,13 +535,14 @@ body.night{
 .slide-sec h3{
     font-size: 20px;
     padding-bottom:5px;
+    color:var(--clr-slideHeading)
 }
 .slide-sec{
     width:100%;
     height:100%;
     padding:20px 20px 10px 20px;
     overflow:hidden;
-    background-color:white;
+    background-color:var(--clr-slide);
     position:relative;
 }
 .product-slide{
@@ -542,7 +567,7 @@ body.night{
     cursor: pointer;
 }
 .l-btn,.r-btn{
-    background-color:rgb(255,255,255,1);
+    background-color:var(--clr-button);
     height:90px;
     width:50px;
     text-align:center;
@@ -566,7 +591,7 @@ body.night{
     border:3px solid rgb(2,150,150);
 }
 .l-btn i,.r-btn i{
-    color:rgb(54,54,54);
+    color:var(--clr-buttonI);
     position:absolute;
     font-size: 30px;
     top:35%;
