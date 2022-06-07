@@ -19,15 +19,16 @@
         <script>
             const popup=document.querySelector('.popup');
             const close=document.querySelector('.close');
-            window.onload=function(){
-                setTimeout(function(){
+            function pop(){
+                setTimeout(function pop(){
                     popup.style.display="block";
-                },1000)
+                },2000)
             }
 
             close.addEventListener('click',()=>{
                 popup.style.display="none";
             })
+            window.onload=pop();
         </script>
         <div class="sidebar">
             <div class="hdn-head">
@@ -205,7 +206,6 @@
                         x.innerText="Geo Not Supported"
                     }
                 }
-    
                 function showPosition(data){
                     console.log(data)
                     // x.innerText=`Latitude is ${data.coords.latitude} & Longitude is ${data.coords.longitude}`
@@ -222,11 +222,10 @@
                         let cityName = data.city.name
                         let weather = data.list[0].temp.day
                         x.innerText = `Weather of ${cityName} is ${weather} °C`
-                        // document.getElementById('icon').appendChild(
-                        //      <img src='https://openweathermap.org/img/w/'+data.list[0].weather.icon+'.png'/>
-                        // )
+    
                     })
                 }
+                window.onload=geolocation();
             </script>
         </header>
         <section class="sec-1">
