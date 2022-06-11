@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        
         <div class="popup">
             <div class="contentBox">
                 <div class="imBx">
@@ -23,10 +24,11 @@
                 setTimeout(function pop(){
                     popup.style.display="block";
                 },2000)
+                document.body.classList.add("stop-scroll");
             }
-
             close.addEventListener('click',()=>{
                 popup.style.display="none";
+                document.body.classList.remove("stop-scroll");
             })
             window.onload=pop();
         </script>
